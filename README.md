@@ -13,7 +13,7 @@ For even groupings, if we have 15 students in groups of 3, then we have "15 choo
 The algorithm works as follows.
 
 Consider 10 students in 3 groups with three Labs/rotations
-      
+```
             Groups Lab 1     Groups, Lab 2  
 student_0:       1  
 student_1:       1  
@@ -25,9 +25,11 @@ student_6:       3
 student_7:       3  
 student_8:       3  
 student_9:       3  
+```
 
 To set the groups for Lab 2, we have all students available. We randomly select a student for Group 1, say student 3.
 
+```
             Groups Lab 1     Groups, Lab 2  
 student_0:       1  
 student_1:       1  
@@ -39,9 +41,11 @@ student_6:       3
 student_7:       3  
 student_8:       3  
 student_9:       3  
+```
 
 Student 3 has worked with students 4 and 5, so we have students (0, 1, 2, 6, 7, 8, 9) available. Randomly select one of these for group 1, say student 8.
 
+```
             Groups Lab 1     Groups, Lab 2  
 student_0:       1  
 student_1:       1  
@@ -53,9 +57,10 @@ student_6:       3
 student_7:       3  
 student_8:       3                1  
 student_9:       3  
+```
 
 Students in group 1 are now student 3 and student 8, and they have worked with students 4, 5, 6, 7, and 9, so we have students (0,1,2) available; we randomly select student 2.
-
+```
             Groups Lab 1     Groups, Lab 2  
 student_0:       1  
 student_1:       1  
@@ -67,8 +72,9 @@ student_6:       3
 student_7:       3  
 student_8:       3                1  
 student_9:       3  
-
+```
 Now we set group 2. We have students (0, 1, 4, 5, 6, 7, 9) available, and we randomly choose one of these, say, student 0:
+```
             Groups Lab 1     Groups, Lab 2  
 student_0:       1                2  
 student_1:       1  
@@ -80,8 +86,9 @@ student_6:       3
 student_7:       3  
 student_8:       3                1  
 student_9:       3  
-
+```
 Student 0 has worked with students 1, and 2, so we have students (4, 5, 6, 7, 9) available. We randomly select student 6:
+```
             Groups Lab 1     Groups, Lab 2  
 student_0:       1                2  
 student_1:       1  
@@ -93,8 +100,10 @@ student_6:       3                2
 student_7:       3  
 student_8:       3                1  
 student_9:       3  
-
+```
 Students 0 and 6 have worked with students 1, 2, 7, 8, 9, so only students 4, and 5 are available (noting that others have either been partnered, or already selected for a group). Choose student 5:
+
+```
             Groups Lab 1     Groups, Lab 2  
 student_0:       1                2  
 student_1:       1  
@@ -106,8 +115,10 @@ student_6:       3                2
 student_7:       3  
 student_8:       3                1  
 student_9:       3  
+```
 
 Group 3 will now include whoever is left, but the algorithm proceeds as above. If there are no choices for avoiding previous pairings, then a random choice of students who have not yet been assigned to a group is made. 
+```
             Groups Lab 1     Groups, Lab 2  
 student_0:       1                2  
 student_1:       1                3  
@@ -119,6 +130,7 @@ student_6:       3                2
 student_7:       3                3  
 student_8:       3                1  
 student_9:       3                3  
+```
 
 Note that this gives some redundancy: student 7 has been with student 9 twice, and vice-versa.
 

@@ -10,7 +10,7 @@ arbitrary.  In subsequent rotations, students are randomized among groups so as 
 
 For even groupings, if we have 15 students in groups of 3, then we have "15 choose 3" = 455 possible groupings. If we have 4 lab rotations, then we would have 455 choose 4 = 1762351955 possibilities. We then select one (of many, likely) that has the minimum redundancy. This brute-force approach isn't practical, so the approximate method above is used. 
 
-The algorithm works as follows.
+The algorithm works as described below. (This is an original solution without consulting the literature or online sources, so there are likely more efficient and robust ways to do this.)
 
 Consider 10 students in 3 groups with three Labs/rotations
 ```
